@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roads Coffee</title>
+  <style>
+    body {
+      font-family: Poppins, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgTokJtVU_aba21JrcsqPvryAm662Mrxo5IUY7EhMQY3E6t8IUnX-YgZ8&s=10'); /* Ganti dengan background asli */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #333;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 30px 10px;
+      text-align: center;
+    }
+    .logo {
+      max-width: 120px;
+      margin: 60 auto 15px;
+      border-radius: 90
+    }
+    header h1 {
+      font-size: 50px;
+      font-weight: bold;
+      margin: 0;
+    }
+    .profile {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.50);
+      padding: 20px;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .menu-item {
+      background: rgba(255, 200, 150, 0.95);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 280px;
+      padding: 15px;
+      text-align: center;
+    }
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .menu-item h3 {
+      margin: 10px 0 5px;
+    }
+    .menu-item input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      margin-top: 10px;
+    }
+    .menu-item button {
+      display: block;
+      margin: 10px auto 0;
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .checkout {
+      background: rgba(255, 255, 255, 1);
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 30px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .checkout input[type="text"] {
+      padding: 8px;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      width: 200px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .checkout button {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="logo" src="https://i.ibb.co.com/CKcSWjqn/e0034f7f-a65a-4ad6-9837-8fd8570a7a24.jpg" alt="Logo Road Coffe" />
+  <h1>Road Coffee</h1>
+</header>
+
+<div class="profile">
+  <p><strong>Road Coffe adalah gerai yang bergerak dibidang F&amp;B yang menonjolkan menu khas kopi susu gula aren yang spesial. Nikmati kesegaran kopi dari hirupan pertama dan tidak meninggalkan rasa tidak nyaman di tenggorokan.</strong></p>
+</div>
+
+<div class="menu">
+  <!-- Menu Items (Palm Sugar, Latte, etc.) -->
+  <!-- Palm Sugar -->
+  <div class="menu-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5oItZh0I2X53MKQiEP6gV0VknluWr0z7kjFiXMUmnSf4lc0hu0VHBHJ8j&s=10" alt="Palm Sugar">
+    <h3>Palm Sugar (KOAR) 👍</h3>
+    <p>Menu andalan kami dibuat dengan gula aren berkualitas dan asli yang membuat kami berbeda.</p>
+    <input type="number" min="1" value="1">
+    <button onclick="addToCart('Palm Sugar')">Tambahkan ke Keranjang</button>
+  </div>
+
+  <!-- Menu lainnya -->
+  <div class="menu-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Caffe_Latte_at_Pulse_Cafe.jpg/1200px-Caffe_Latte_at_Pulse_Cafe.jpg" alt="Cafe Latte">
+    <h3>Cafe Latte</h3>
+    <input type="number" min="1" value="1">
+    <button onclick="addToCart('Cafe Latte')">Tambahkan ke Keranjang</button>
+  </div>
+  <div class="menu-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiQ8iDAlA2g1HdrgIA-9SbUVGIMmT5PKyd0xuqyrI3CmhJkt0Qud2Zwx4&s=10" alt="Americano">
+    <h3>Americano</h3>
+    <input type="number" min="1" value="1">
+    <button onclick="addToCart('Americano')">Tambahkan ke Keranjang</button>
+  </div>
+  <div class="menu-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPT7fnFFCLktqfPhf1qXM1fBz-Myi2_nZ3e3c1wuGwhUjrARuY8VkrNAU&s=10" alt="Creamy Latte">
+    <h3>Creamy Latte</h3>
+    <input type="number" min="1" value="1">
+    <button onclick="addToCart('Creamy Latte')">Tambahkan ke Keranjang</button>
+  </div>
+  <div class="menu-item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9GoojHvERaANaqkxNEE7emaC4QZfy81yRxETc9hK1gV59DGVV2t6sRjJo&s=10" alt="Caramel Latte">
+    <h3>Caramel Latte</h3>
+    <input type="number" min="1" value="1">
+    <button onclick="addToCart('Caramel Latte')">Tambahkan ke Keranjang</button>
+  </div>
+</div>
+
+<div class="checkout">
+  <h2>Checkout</h2>
+  <p id="order-summary">Belum ada pesanan.</p>
+  <label for="table-number">Nomor Meja:</label><br>
+  <input type="text" id="table-number" placeholder="Contoh: 5" /><br />
+  <button onclick="checkout()">Pesan Sekarang</button>
+</div>
+
+<script>
+  const cart = {};
+
+  function addToCart(itemName) {
+    const input = [...document.querySelectorAll('.menu-item')].find(item =>
+      item.querySelector('h3').textContent.includes(itemName)
+    ).querySelector('input');
+
+    const qty = parseInt(input.value);
+    if (cart[itemName]) {
+      cart[itemName] += qty;
+    } else {
+      cart[itemName] = qty;
+    }
+    updateOrderSummary();
+  }
+
+  function updateOrderSummary() {
+    const summary = Object.entries(cart).map(([item, qty]) => `${item} x${qty}`).join(', ');
+    document.getElementById('order-summary').textContent = summary || 'Belum ada pesanan.';
+  }
+
+  function checkout() {
+    const tableNumber = document.getElementById('table-number').value.trim();
+    if (!tableNumber) {
+      alert('Silakan masukkan nomor meja.');
+      return;
+    }
+
+    const orderText = encodeURIComponent("Halo, saya ingin memesan:\n" +
+      Object.entries(cart).map(([item, qty]) => `- ${item} x${qty}`).join('\n') +
+      `\nNomor Meja: ${tableNumber}`
+    );
+
+    const whatsappURL = `https://wa.me/6285368386306?text=${orderText}`;
+    window.open(whatsappURL, '_blank');
+  }
+</script>
+
+</body>
+</html>
