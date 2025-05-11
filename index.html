@@ -164,7 +164,50 @@
   <input type="text" id="table-number" placeholder="Contoh: 5" /><br />
   <button onclick="checkout()">Pesan Sekarang</button>
 </div>
+  <!-- Tambahan di bawah elemen checkout -->
+<div class="checkout">
+  <h2>Program Member Kopi</h2>
+  <label>Nomor HP:</label><br>
+  <input type="text" id="phoneInput" placeholder="Contoh: 081234567890"><br>
+  <button onclick="daftarMember()">Daftar / Masuk Member</button>
+  <p id="statusMember" style="margin-top: 10px;"></p>
+  <button onclick="tambahPembelian()">Saya Baru Beli 1 Gelas</button>
+  <p id="totalBeli">Total Pembelian: 0</p>
+  <p id="kuponTampil" style="font-weight:bold; color:green;"></p>
+</div>
 
+<script>
+  function daftarMember() {
+    const phone = document.getElementById('phoneInput').value.trim();
+    if (!phone.match(/^08[0-9]{8,11}$/)) {
+      alert("Masukkan nomor HP yang valid (diawali 08)!");
+      return;
+    }
+    localStorage.setItem('memberPhone', phone);
+    const total = parseInt(localStorage.getItem('kopi_' + phone)) || 0;
+    document.getElementById('statusMember').textContent = `Member terdaftar: ${phone}`;
+    document.getElementById('totalBeli').textContent = `Total Pembelian: ${total}`;
+    document.getElementById('kuponTampil').textContent = "";
+  }
+
+  function tambahPembelian() {
+    const phone = localStorage.getItem('memberPhone');
+    if (!phone) {
+      alert("Silakan daftar/member dulu dengan nomor HP.");
+      return;
+    }
+
+    let total = parseInt(localStorage.getItem('kopi_' + phone)) || 0;
+    total++;
+    localStorage.setItem('kopi_' + phone, total);
+    document.getElementById('totalBeli').textContent = `Total Pembelian: ${total}`;
+
+    if (total === 5 || total === 10) {
+      document.getElementById('kuponTampil').textContent = `Selamat! Anda mendapatkan kupon kopi gratis ke-${total}!`;
+    } else {
+      document.getElementById('kuponTampil').textContent = "";
+    }
+  
 <script>
   const cart = {};
 
